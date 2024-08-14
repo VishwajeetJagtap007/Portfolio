@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pd-Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="ic.png">
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        body {
+            background-color: rgb(0, 0, 32);
+            color: white;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(18, 18, 62);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 25px;
+            text-decoration: none;
+            color: white;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        nav ul li a:hover {
+
+            color: rgb(153, 153, 226);
+            font-size: 1.05rem;
+
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstsection {
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 160px 0;
+        }
+
+        .firstsection>div {
+            width: 30%;
+
+
+        }
+
+        .rightSection img {
+
+            width: 80%;
+            margin: 50px 0;
+        }
+
+        .leftSection {
+            font-size: 3rem;
+
+
+        }
+
+        .leftSection .button {
+            padding: 50px 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .leftSection .btn {
+            padding: 12px;
+            background: #1e2167;
+            color: white;
+            margin: 10px;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .leftSection .btn:hover {
+            background-color: rgb(170, 107, 228);
+        }
+
+        .leftSection .contact a {
+
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            border: 3px solid rgb(170, 107, 228);
+            border-radius: 40%;
+            height: 40px;
+            font-size: 30px;
+            margin: 30px 15px 30px 0;
+
+
+            color: white;
+        }
+
+        .leftSection .contact a:hover {
+            background-color: rgb(170, 107, 228);
+            ;
+        }
+
+        .purple {
+            color: rgb(170, 107, 228);
+            box-shadow: 0 0 20px rgb(170, 107, 228);
+
+        }
+
+        #element,
+        #element2 {
+            color: rgb(170, 107, 228);
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            margin: 30px;
+            margin-bottom: 100px;
+
+
+        }
+
+        .about .image {
+            width: 30%;
+            margin: 0 30px;
+
+        }
+
+        .about-text {
+            width: 50%;
+
+            padding: 10px;
+
+
+        }
+
+        .about .photo {
+            border-radius: 50%;
+            height: 300px;
+            padding: auto;
+            margin: 30px;
+            border: 3px solid rgb(170, 107, 228);
+            box-shadow: 0 0 50px rgb(170, 107, 228);
+
+
+        }
+
+        .about-text h2 {
+            font-size: 40px;
+
+
+        }
+
+        .about-text h2 span {
+            color: rgb(170, 107, 228);
+            ;
+
+        }
+
+        .about-text p {
+            margin: 10px;
+            font-size: 20px;
+        }
+
+        /* Skills */
+        #Skills {
+            margin-bottom: 100px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 40px;
+            padding-bottom: 10px;
+            padding-top: 40px;
+
+        }
+
+        .subtitle span {
+            color: rgb(170, 107, 228);
+            ;
+        }
+
+        .sec {
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 0px;
+        }
+
+        .container1 {
+            width: 600px;
+            max-height: 500px;
+            padding: 10px;
+            margin-left: 100px;
+        }
+
+        .container2 {
+            width: 600px;
+            max-height: 500px;
+            padding: 10px;
+            margin-left: 100px;
+        }
+
+        .heading1 {
+            text-align: center;
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            text-decoration-thickness: 5px;
+            margin-bottom: 3px;
+        }
+
+        .bar {
+            font-size: 23px;
+        }
+
+        .Technical-bars .bar {
+            margin-top: 40px 0;
+            padding: 5px;
+        }
+
+        .Technical-bars .bar:first-child {
+            margin-top: 0;
+        }
+
+        .Technical-bars .bar:last-child {
+            margin-bottom: 0;
+        }
+
+        .Technical-bars .bar .info {
+            margin-bottom: 5px;
+        }
+
+        .Technical-bars .bar .info span {
+            font-size: 17px;
+            font-weight: 500;
+            animation: showText 0.5s 1s linear forwards;
+
+
+        }
+
+        .Technical-bars .bar .progress-line {
+            position: relative;
+            border-radius: 10px;
+            width: 100%;
+            height: 5px;
+            background-color: white;
+            animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+        }
+
+        .Technical-bars .bar .progress-line span {
+            height: 100%;
+            background-color: rgb(170, 107, 228);
+            position: absolute;
+            border-radius: 10px;
+            animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+
+        }
+
+        .progress-line.html span {
+            width: 70%;
+        }
+
+        .progress-line.css span {
+            width: 50%;
+        }
+
+        .progress-line.python span {
+            width: 50%;
+        }
+
+        .progress-line.java span {
+            width: 60%;
+        }
+
+        .progress-line.cpls span {
+            width: 60%;
+        }
+
+        .progress-line span::after {
+            position: absolute;
+            padding: 1px 8px;
+            background-color: white;
+            color: rgb(96, 55, 135);
+            ;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28px;
+            right: -20px;
+            animation: showText 0.5s 1.5s linear forwards;
+
+        }
+
+        .progress-line.html span::after {
+            content: "70%";
+        }
+
+        .progress-line.css span::after {
+            content: "50%";
+        }
+
+        .progress-line.python span::after {
+            content: "50%";
+        }
+
+        .progress-line.java span::after {
+            content: "60%";
+        }
+
+        .progress-line.cpls span::after {
+            content: "60%";
+        }
+
+        .progress-line span::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-top-color: black;
+            top: -10px;
+            right: 0;
+            animation: showText 0.5s 1.5s linear forwards;
+
+        }
+
+
+
+
+
+
+
+        .contactme {
+            display: flex;
+            padding: 40px;
+            justify-content: space-around;
+        }
+
+        .contactme .contact-text {
+            width: 50%;
+            margin-right: 30px;
+        }
+
+        .contactme .contact-form {
+            width: 70%;
+        }
+
+        .contact-text h1 {
+            text-align: left;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .contact-text p {
+            padding: 10px;
+            margin-top: 70px;
+            font-size: 20px;
+        }
+
+        .contact-detail {
+
+            margin-top: 200px;
+        }
+
+        .contact-detail div {
+            font-size: 25px;
+            margin: 10px;
+
+
+        }
+
+        .form {
+            border: 2px solid rgb(170, 107, 228);
+            border-radius: 10px;
+            box-shadow: 1 2 50px rgb(170, 107, 228);
+            padding: 30px;
+
+
+        }
+
+        .form h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 10px;
+
+
+        }
+
+        .form-btn {
+            padding: 12px;
+            background: #1e2167;
+            color: white;
+            margin: 10px;
+            margin-top: 20px;
+            border: 2px solid white;
+            box-shadow: 0, 0, 20, white;
+            border-radius: 8px;
+            font-size: 20px;
+            width: 50%;
+            cursor: pointer;
+        }
+
+        .form-btn:hover {
+            background-color: rgb(170, 107, 228);
+
+        }
+
+        .form-control {
+            width: 80%;
+            height: 20px;
+            border-radius: 3px;
+            padding: 10px;
+            color: black;
+            font-size: 20px;
+            margin: 10px;
+
+
+        }
+
+        .form #inputAddress {
+            border-radius: 3px;
+            padding: 10px;
+            color: black;
+            font-size: 20px;
+            margin: 10px;
+
+        }
+
+
+        footer {
+            background-color: #333347;
+
+
+        }
+
+        .footer {
+            padding: 10px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .footer .contact a {
+
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            border: 3px solid rgb(170, 107, 228);
+            border-radius: 40%;
+            height: 40px;
+            font-size: 30px;
+            margin: 30px 15px 30px 0;
+
+
+            color: white;
+        }
+
+        .footer .contact a:hover {
+            background-color: rgb(170, 107, 228);
+            ;
+        }
+
+        .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 12px 0;
+        }
+
+        main hr {
+            border: 0;
+            height: 1.2px;
+            margin: 60px, 84px;
+            margin-bottom: 30px;
+            background-color: #9c97f1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                Vishwajeet`s Portfolio
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#">Home</a> </li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Skills">Skill</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#contactme">Contact Me </a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <main>
+        <section class="firstsection">
+            <div class="leftSection">
+                Hi,My name is<span class="purple"> Vishwajeet </span>
+                <div>and I am a </div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn" type="button" onclick="gotoresume()">Download</button>
+                    <button class="btn" type="button" onclick="gotogit()"> Visit Github</button>
+                </div>
+                <div class="contact">
+                    <a href="#"><i class='bx bxl-facebook'></i></box-icon></a>
+                    <a
+                        href="#"><i
+                            class='bx bxl-instagram'></i></box-icon></box-icon></a>
+                    <a href="#"><i class='bx bxl-github'></i></i></box-icon></a>
+                    <a
+                        href="https://www.linkedin.com/in/vishwajeet-jagtap/"><i
+                            class='bx bxl-linkedin'></i></box-icon></box-icon></a>
+
+                </div>
+            </div>
+            </div>
+
+            </div>
+            <div class="rightSection">
+                <img src="developer.png">
+            </div>
+
+        </section>
+
+
+
+        <section class="about" id="about">
+            <div class="image">
+                <img class="photo" src="photo.png">
+            </div>
+            <div class="about-text">
+                <h2>About <span>Me</span></h2>
+                <span id="element2"></span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ab itaque, tenetur modi a,
+                    voluptates minus cupiditate magni iure ducimus deleniti nobis natus doloremque. Veritatis aliquid
+                    officiis assumenda repellat omnis.</p>
+            </div>
+        </section>
+
+
+        <hr>
+        <section id="Skills">
+            <h1 class="subtitle">My <span>Skills</span></h1>
+            <div class="sec">
+                <div class="container1">
+                    <h1 class="heading1">Technical Skills</h1>
+                    <div class="Technical-bars">
+
+                        <div class="bar"><i class='bx bxl-html5' style="color: #c9332e;"></i>
+                            <div class="info">
+                                <span>HTML <span class="addhtml"></span></span>
+                            </div>
+                            <div class="progress-line html">
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="bar"><i class='bx bxl-css3' style="color: #147bbc;"></i>
+                            <div class="info">
+                                <span>CSS <span class="addcss"></span></span>
+                            </div>
+                            <div class="progress-line css">
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="bar"><i class='bx bxl-python' style="color: #b0bc1e;"></i>
+                            <div class="info">
+                                <span>Python <span class="addpy"></span></span>
+                            </div>
+                            <div class="progress-line python">
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="bar"><i class='bx bxl-java' style="color: #c95d2e;"></i>
+                            <div class="info">
+                                <span>Java <span class="addjava"></span></span>
+                            </div>
+                            <div class="progress-line java">
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="bar"><i class='bx bxl-c-plus-plus' style="color: #3db2fc;"></i>
+                            <div class="info">
+                                <span>C/C++ <span class="addc"></span></span>
+                            </div>
+                            <div class="progress-line cpls">
+                                <span></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+        </section>
+
+
+
+        <hr>
+        <section class="contactme" id="contactme">
+
+            <div class="contact-text">
+                <h1>Contact <span id="element">Me</span></h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos rem id modi amet, ipsum nemo blanditiis
+                    quas ab hic incidunt harum dolores alias sapiente animi! Ducimus cupiditate nulla saepe incidunt?
+                </p>
+                <div class="contact-detail">
+                    <div><i class='bx bx-envelope'></i>contact@gmail.com</div>
+                    <div><i class='bx bxs-phone-call'></i>1234567890</div>
+                </div>
+
+            </div>
+            <div class="contact-form">
+                <form class="form" method="post" id="forms" onsubmit="abc()" >
+                    <h1> Contact <span id="element">Me</span></h1>
+                    <label for="inputEmail4">Name</label>
+                    <div>
+                        <input type="text" name="Name" class="form-control" id="inputEmail4"
+                            placeholder="Enter your Name" required>
+                    </div>
+                    <div>
+                        <label for="inputEmail4">Email</label>
+                        <div>
+                            <input type="email" name="Email" class="form-control" id="inputEmail4"
+                                placeholder="Enter a Valid Email" required>
+                        </div>
+                        <label for="inputAddress">Address</label>
+                        <div>
+                            <textarea id="inputAddress" name="Address" placeholder="Enter Your Address" rows="4"
+                                cols="33" required></textarea>
+                        </div>
+                        <button type="submit" class="form-btn">Send Me</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer">
+            <div class="contact">
+                <a href="https://www.instagram.com/accounts/login/"><i class='bx bxl-facebook'></i></box-icon></a>
+                <a
+                    href="https://www.facebook.com/dialog/oauth?client_id=124024574287414&locale=en_GB&redirect_uri=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F&response_type=code%2Cgranted_scopes&scope=email&state=%7B%22fbLoginKey%22%3A%221xbr0smkp2yiurex5h218m3e301nif8st14bh6i56dv731j747dv%22%2C%22fbLoginReturnURL%22%3A%22%2Ffxcal%2Fdisclosure%2F%3Fnext%3D%252F%22%7D"><i
+                        class='bx bxl-instagram'></i></box-icon></box-icon></a>
+                <a href="https://github.com/P-Dandage"><i class='bx bxl-github'></i></i></box-icon></a>
+                <a
+                    href="https://www.linkedin.com/in/prathamesh-dandage-b592a3281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                        class='bx bxl-linkedin'></i></box-icon></box-icon></a>
+
+            </div>
+        </div>
+        <div class="footer-rights">Copyright &#169; prathamportfolio.com | All rigth reserved</div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Java Developer',],
+            typeSpeed: 50,
+        });
+        var typed2 = new Typed('#element2', {
+            strings: ['Web Developer', 'Java Developer'],
+            typeSpeed: 50,
+        });
+        function gotoresume() {
+            window.open("https://drive.google.com/file/d/1JhhiiiJZ81nXUvOb3E0bVlC3SUqxtvpA/view?usp=drive_link");
+
+
+        }
+        function gotogit() {
+            window.open("https://github.com/P-Dandage");
+        }
+        function abc() {
+            const form = document.forms['forms'];
+            fetch("https://script.google.com/macros/s/AKfycby_UdjtcjVLWhGpYiOYMUkCLcsrdq9kBKrZXSRKxbxCRhkmrDpaFN1KeDV66N2YUIs/exec", { method:'POST', body: new FormData(form)})
+            alert("Thank you! your form is submitted successfully.");
+             window.reload(); }
+                  
+          
+   
+
+   
+    </script>
+
+
+
+
+</body>
+
+</html>
